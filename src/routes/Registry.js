@@ -53,13 +53,13 @@ function Registry(){
             <form onSubmit={ addItem }>
                 <input type="text" value={textInput} onChange={(e)=>setTextInput(e.target.value)} />
                 <input type="button" value="Submit" />
-                <button onClick={addItem}>click</button>
+                <button onClick={addItem}>Add</button>
             </form>
             {error? <span style={{color: "red"}}>Error occurred.</span> : null} 
             {
                 registryData.map((item,index)=>{
                     return (
-                    <li key={index}>{index}:{item}<button onClick={()=>{removeItem(index)}}>Remove</button><button onClick={()=>{editItem(index)}}>Edit</button></li>
+                    <li key={index}>{index}:{item}<button onClick={()=>{removeItem(index)}}>Delete</button><button onClick={()=>{editItem(index)}}>Update</button></li>
                     )
                 })
             }
